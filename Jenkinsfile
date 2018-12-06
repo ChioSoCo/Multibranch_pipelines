@@ -6,20 +6,13 @@ pipeline {
         sh 'echo "Build step"'
       }
     }
+
     stage('Test') {
-      parallel {
-        stage('Test') {
-          steps {
-            sh 'echo "Test step"'
-          }
-        }
-        stage('extra test') {
-          steps {
-            echo 'other test - test'
-          }
-        }
+      steps {
+        sh 'echo "Test step"'
       }
-    }
+    }    
+    
     stage('Deploy') {
       steps {
         sh 'echo "Deploy step"'
