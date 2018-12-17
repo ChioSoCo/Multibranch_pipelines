@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "aefba9cd-81d1-4d9d-bbdd-d1668696fb29",
+		"name": "Test Collection for Newman",
+		"description": "Creation of a collection to share and execute it with Newman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "First request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "postman-echo.com/get",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Second request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "google.com",
+					"host": [
+						"google",
+						"com"
+					]
+				},
+				"description": "Google get"
+			},
+			"response": []
+		}
+	]
+}
