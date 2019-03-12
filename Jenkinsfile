@@ -5,12 +5,16 @@ pipeline {
       steps {
         sh 'echo "Build step"'
         script {
-          def issue = [fields: [ project: [key: 'WEC'],
-                       summary: 'New JIRA Created from Jenkins.',
-                       description: 'New JIRA Created from Jenkins. description',
-                       issuetype: [name: 'Task']]]
-          def newIssue = jiraNewIssue issue: issue, site: 'http://54.146.165.252:443'
-          echo newIssue.data.key
+
+          withEnv(['JIRA_SITE=http://54.146.165.252:443']) {
+          def testIssue = [fields: [ project: [key: WEC],
+          summary: "New JIRA Created from Jenkins.",
+          description: "Description New JIRA Created from Jenkins.",
+                       issuetype: [id: 3]]]
+          response = jiraNewIssue issue: testIssue
+          echo response.successful.toString()
+          echo response.data.toString()
+          
         }
       }
     }
