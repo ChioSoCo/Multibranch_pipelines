@@ -6,7 +6,7 @@ pipeline {
         sh 'echo "Build step"'
         script {
 
-          withEnv(['JIRA_SITE=http://54.146.165.252:443']) {
+          withEnv(['JIRA_SITE=RS']) {
           def testIssue = [fields: [ project: [key: 'WEC'],
           summary: "New JIRA Created from Jenkins.",
           description: "Description New JIRA Created from Jenkins.",
