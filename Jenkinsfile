@@ -10,7 +10,7 @@ pipeline {
           def testIssue = [fields: [ project: [key: 'WEC'],
           summary: "New JIRA Created from Jenkins.",
           description: "Description New JIRA Created from Jenkins.",
-                       issuetype: [id: 3]]]
+                       issuetype: [name: 'Task']]]
           response = jiraNewIssue issue: testIssue
           echo response.successful.toString()
           echo response.data.toString()
