@@ -14,6 +14,7 @@ pipeline {
           response = jiraNewIssue issue: testIssue
           echo response.successful.toString()
           echo response.data.toString()
+          }//withenv
           
         }
       }
