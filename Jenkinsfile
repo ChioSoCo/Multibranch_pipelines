@@ -12,8 +12,7 @@ pipeline {
           description: "Description New JIRA Created from Jenkins.",
                        issuetype: [name: 'Task']]]
           response = jiraNewIssue issue: testIssue
-          echo response.successful.toString()
-          echo response.data.toString()
+          echo newIssue.data.key
           }//withenv
           
         }
