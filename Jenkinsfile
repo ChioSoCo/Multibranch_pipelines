@@ -4,10 +4,10 @@ pipeline {
     stage('Build') {
       steps {
         sh 'echo "Build step"'
-        //script {
+        script {
 
           //withEnv(['JIRA_SITE=RS']) {
-          def testIssue = [fields: [ project: [id: 10000],
+          def testIssue = [fields: [ project: [key: WEC],
           summary: "New JIRA Created from Jenkins.",
           description: "Description New JIRA Created from Jenkins.",
                        issuetype: [name: 'Task']]]
@@ -17,7 +17,7 @@ pipeline {
           //echo response.data.toString()
           //}//withenv
           
-        //}
+        }
       }
     }
 
