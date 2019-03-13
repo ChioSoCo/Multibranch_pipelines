@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'echo "Build step"'
-        script {
+        //script {
 
           //withEnv(['JIRA_SITE=RS']) {
           def testIssue = [fields: [ project: [id: 10000],
@@ -17,7 +17,7 @@ pipeline {
           //echo response.data.toString()
           //}//withenv
           
-        }
+        //}
       }
     }
 
