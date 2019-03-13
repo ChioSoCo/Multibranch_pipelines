@@ -6,7 +6,7 @@ pipeline {
         sh 'echo "Build step"'
         script {
 
-          withEnv(['JIRA_SITE=RS']) {
+          //withEnv(['JIRA_SITE=RS']) {
           def testIssue = [fields: [ project: [id: 10000],
           summary: "New JIRA Created from Jenkins.",
           description: "Description New JIRA Created from Jenkins.",
@@ -15,7 +15,7 @@ pipeline {
           echo newIssue.data.key
           //echo response.successful.toString()
           //echo response.data.toString()
-          }//withenv
+          //}//withenv
           
         }
       }
