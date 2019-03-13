@@ -7,7 +7,7 @@ pipeline {
         script {
 
           //withEnv(['JIRA_SITE=RS']) {
-          def testIssue = [fields: [ project: [key: WEC-Project],
+          def testIssue = [fields: [ project: [key: "WEC-Project"],
           summary: "New JIRA Created from Jenkins.",
           description: "Description New JIRA Created from Jenkins.",
                        issuetype: [name: 'Task']]]
