@@ -1,3 +1,6 @@
+String test_URL1= 'https://google.com'
+String test_URL2= 'https://youtube.com'
+
 pipeline {
   agent any
   stages {
@@ -9,9 +12,9 @@ pipeline {
           //Configure "Jira Steps" section from the Manage Jenkins/Configure System page (plugin: JIRA Pipeline Steps)
           
           def testIssue = [fields: [ project: [key: 'WEC'], 
-          summary: "New JIRA Created from Jenkins.",
-          description: "Description New JIRA Created from Jenkins.",
-                       issuetype: [name: 'Task']]]
+          summary: "TSE - Build ${currentBuild.displayName} - ${currentBuild.currentResult}",
+          description: "Google Report: ${test_URL1} Youtube Report: ${test_URL2}",
+          issuetype: [name: 'Task']]]
           def newIssue = jiraNewIssue issue: testIssue, site: 'RS'
           echo newIssue.data.key
           
