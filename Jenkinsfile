@@ -6,17 +6,19 @@ pipeline {
         sh 'echo "Build step"'
         script {
 
-          //withEnv(['JIRA_SITE=RS']) {
-          def testIssue = [fields: [ project: [key: 'WEC'],
+          //Configure "Jira Steps" section from the Manage Jenkins/Configure System page (plugin: JIRA Pipeline Steps)
+          
+          def testIssue = [fields: [ project: [key: 'WEC'], 
           summary: "New JIRA Created from Jenkins.",
           description: "Description New JIRA Created from Jenkins.",
                        issuetype: [name: 'Task']]]
           def newIssue = jiraNewIssue issue: testIssue, site: 'RS'
           echo newIssue.data.key
-          //echo response.successful.toString()
-          //echo response.data.toString()
-          //}//withenv
           
+          //key: name of the project in Jira
+          //summary: Name of the Ticket
+          //description: Description of the Ticket
+          //site: name of the configured site at the Jira pipeline Steps plugin
         }
       }
     }
