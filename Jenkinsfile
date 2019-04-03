@@ -11,11 +11,11 @@ pipeline {
 
           //Configure "Jira Steps" section from the Manage Jenkins/Configure System page (plugin: JIRA Pipeline Steps)
           
-          def testIssue = [fields: [ project: [key: 'WEC'], 
-          summary: "TSE - Build ${currentBuild.displayName} - ${currentBuild.currentResult}",
+          def testIssue = [fields: [ project: [key: 'WECY'], 
+          summary: "Automatic Ticket  - Build ${currentBuild.displayName} - ${currentBuild.currentResult}",
           description: "Google Report: ${test_URL1} Youtube Report: ${test_URL2}",
           issuetype: [name: 'Task']]]
-          def newIssue = jiraNewIssue issue: testIssue, site: 'RS'
+          def newIssue = jiraNewIssue issue: testIssue, site: 'SO'
           echo newIssue.data.key
           
           //key: name of the project in Jira
