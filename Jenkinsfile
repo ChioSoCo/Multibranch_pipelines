@@ -14,6 +14,7 @@ pipeline {
           def testIssue = [fields: [ project: [key: 'WECY'], 
           summary: "Automatic Ticket  - Build ${currentBuild.displayName} - ${currentBuild.currentResult}",
           description: "Google Report: ${test_URL1} Youtube Report: ${test_URL2}",
+          sprint: "WECY Sprint 1",
           issuetype: [name: 'Task']]]
           def newIssue = jiraNewIssue issue: testIssue, site: 'SO'
           echo newIssue.data.key
