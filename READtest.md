@@ -50,18 +50,17 @@ https://jenkins.io/doc/book/pipeline/syntax/
 * **master branch:**
 Working code that is being used for Dev/QA environments.
 
-* **feature branch: **
+* **feature branch:**
 Create a new feature branch (from master) every time you have to create/develop/modify a functionality.
 
 **To merge changes of features branches in to master, you must generate a Pull Request from the feature branch in to master and it has to be approved by the Test lead.**
 
 ### Naming convention for Feature branches
+
+
 | Branch type  | Create from branch | Naming convention | Example |
 | ------------- | ------------- | ------------- | ------------- |
 | feature | master | feature/[JIRA_TICKET_ID] | feature/wcm-1234 |
-
-
-**CREATE THE FEATURE BRANCH FROM THE DEFAULT BRANCH (master)**
 
 **If you are working in multiple Jira tickets, for the creation of the feature branch just specify ONE of the tickets number.**
 
@@ -76,6 +75,7 @@ Where:
 ### Create a feature branch
 
 1.- Go to the repository and select "Create branch from here".
+
 **Remember to create the feature branch from the master branch.**
 
 2.- Specify the name of the new feature branch and click on Create branch.
@@ -92,7 +92,7 @@ Execute:
 git clone [REPO_URL]
 ```
 example:
-git clone https://
+*git clone https://*
 
 3.- Go inside the cloned repository
 Execute:
@@ -100,7 +100,7 @@ Execute:
 cd CLONED_REPOSITORY_FOLDER_NAME
 ```
 example:
-cd wec-test-automation-ios
+*cd wec-test-automation-ios*
 
 **You can see that by default you are on the master branch.**
 
@@ -118,7 +118,7 @@ git checkout [NAME_OF_YOUR_FEATURE_BRANCH]
 ```
 example:
 
-git checkout feature/wcm-4078 
+*git checkout feature/wcm-4078 *
 
 6.- Now you can see the existing files for the feature branch.
 Make your required changes and then upload them to the repository (in your feature branch).
@@ -137,8 +137,8 @@ git add file.name
 git add /path/to/the.file
 ```
 Example:
-git add test_script.java
-git add src/adapter/test.class
+*git add test_script.java*
+*git add src/adapter/test.class*
 
 **Hint: execute “git status” after the add command to validate the status of the changes that you added.**
 
@@ -150,18 +150,19 @@ git commit –m “This is the descriptive message of the commit”
 **Hint: execute “git status” after the commit command to validate the status of the changes that you commited.**
 
 
+
 ##### Recommendatios for commit messages
 Add a general description of the commited changes.
 Ex.
-git commit –m “Creation of json file to build the application”
-git commit –m “Adding a feature in to json file to get the total of executed tests”
-git commit –m “Updating json file with new environment variables to get total of fails”
+*git commit –m “Creation of json file to build the application”*
+*git commit –m “Adding a feature in to json file to get the total of executed tests”*
+*git commit –m “Updating json file with new environment variables to get total of fails”*
 
 Avoid unclear messages
 Ex.
-git commit –m “03.20.2019.13:36CST”
-git commit – m “feature/wcm-1233”
-git commit –m “push”
+*git commit –m “03.20.2019.13:36CST”*
+*git commit – m “feature/wcm-1233”*
+*git commit –m “push”*
 
 #### 3.- Push
 Push to the remote repository the commited changes on HEAD.
@@ -173,7 +174,7 @@ Push a new Branch (this Branch does not currently exist on the remote repository
 git push origin [NAME_OF_BRANCH]
 ```
 Example:
-  git push origin feature/wcm-1234
+  *git push origin feature/wcm-1234*
 
 
 ### Create a pull request 
