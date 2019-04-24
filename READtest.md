@@ -47,36 +47,36 @@ https://jenkins.io/doc/book/pipeline/syntax/
 
 ## Branch strategy
 
-* master branch:
+* **master branch:**
 Working code that is being used for Dev/QA environments.
 
-* feature branch: 
+* **feature branch: **
 Create a new feature branch (from master) every time you have to create/develop/modify a functionality.
 
-**To merge changes of features branches in to master, you must generate a Pull Request from the feature branch in to master and it has to be approved by the Test lead.
+**To merge changes of features branches in to master, you must generate a Pull Request from the feature branch in to master and it has to be approved by the Test lead.**
 
-###Naming convention for Feature branches
+### Naming convention for Feature branches
 | Branch type  | Create from branch | Naming convention | Example |
 | ------------- | ------------- | ------------- | ------------- |
 | feature | master | feature/[JIRA_TICKET_ID] | feature/wcm-1234 |
 
 
-**CREATE THE FEATURE BRANCH FROM THE DEFAULT BRANCH (master)
+**CREATE THE FEATURE BRANCH FROM THE DEFAULT BRANCH (master)**
 
-**If you are working in multiple Jira tickets, for the creation of the feature branch just specify ONE of the tickets number.
+**If you are working in multiple Jira tickets, for the creation of the feature branch just specify ONE of the tickets number.**
 
 Where:
 [JIRA_TICKET_ID] → Id of the Jira's ticket where the feature was requested.
 
 
-###Test Automation Flow
+### Test Automation Flow
 
 
-##How to
-###Create a feature branch
+## How to
+### Create a feature branch
 
 1.- Go to the repository and select "Create branch from here".
-**Remember to create the feature branch from the master branch.
+**Remember to create the feature branch from the master branch.**
 
 2.- Specify the name of the new feature branch and click on Create branch.
 
@@ -96,26 +96,26 @@ git clone https://
 
 3.- Go inside the cloned repository
 Execute:
-´´´
+```
 cd CLONED_REPOSITORY_FOLDER_NAME
-´´´
+```
 example:
 cd wec-test-automation-ios
 
-**You can see that by default you are on the master branch.
+**You can see that by default you are on the master branch.**
 
 4.- List the existing branches for that repository
 Execute:
-´´´
+```
 git branch -a
-´´´
-**If you don't see your feature branch, execute "git pull" to get the latest changes from Bitbucket in to your machine.
+```
+**If you don't see your feature branch, execute "git pull" to get the latest changes from Bitbucket in to your machine.**
 
 5.- Switch to your feature branch
 Execute
-´´´
+```
 git checkout [NAME_OF_YOUR_FEATURE_BRANCH]
-´´´
+```
 example:
 
 git checkout feature/wcm-4078 
@@ -127,27 +127,27 @@ Make your required changes and then upload them to the repository (in your featu
 
 #### 1.- Add
 To add all files from the current folder execute:
-´´´
+```
 git add .
-´´´
+```
 
 To add specific file execute:
-´´´
+```
 git add file.name
 git add /path/to/the.file
-´´´
+```
 Example:
 git add test_script.java
 git add src/adapter/test.class
 
-**Hint: execute “git status” after the add command to validate the status of the changes that you added.
+**Hint: execute “git status” after the add command to validate the status of the changes that you added.**
 
 #### 2.-  Commit
 Create a new commit and attach a message
-´´´
+```
 git commit –m “This is the descriptive message of the commit”
-´´´
-**Hint: execute “git status” after the commit command to validate the status of the changes that you commited.
+```
+**Hint: execute “git status” after the commit command to validate the status of the changes that you commited.**
 
 
 ##### Recommendatios for commit messages
@@ -165,31 +165,31 @@ git commit –m “push”
 
 #### 3.- Push
 Push to the remote repository the commited changes on HEAD.
-´´´
+```
 git push
-´´´
+```
 Push a new Branch (this Branch does not currently exist on the remote repository)
-´´´
+```
 git push origin [NAME_OF_BRANCH]
-´´´
+```
 Example:
   git push origin feature/wcm-1234
 
 
 ### Create a pull request 
 When you ask to integrate your changes into and other Branch.
-**Must exists a reviewer which validates that the Project stills fully working when the changes get integrated.
-**When the feature branch has your latest changes in the Bitbucket repository, now you create a Pull request to master to merge the changes to master.
+**Must exists a reviewer which validates that the Project stills fully working when the changes get integrated.**
+**When the feature branch has your latest changes in the Bitbucket repository, now you create a Pull request to master to merge the changes to master.**
 
 1.- Go to the repository and click on Pull request/Create pull request.
 2.- Select the feature branch from which you want to merge into master branch.
 3.- Add the Title and Description of the changes that you are merging in to master.
-**Remember to add a reviewer for the Pull request.
+**Remember to add a reviewer for the Pull request.**
 
 4.- The reviewer will see a list of pull request that must to review.
 Can also consult the description of the merge.
 It's possible to see the differences of the changes.
 Can add comments to the person that created the pull request.
-**Fix the merge conflicts manually before merging the changes.
+**Fix the merge conflicts manually before merging the changes.**
 
 
