@@ -12,8 +12,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 
 ### Test Automation Repositories
-Repository	Default branch	Comments
-wec-test-automation-android 	master	
+    
+||Repository|Default branch||
+|wec-test-automation-android|master|
+|wec-test-automation-ios|master|
+
+Comments:
 Test automation team must upload their source code (without the jar file -builded project-) in these new (clean) repositories.
 Upload the full code in the master branch.
 Start to use the branching strategy (check the Branch strategy section on this page), following the naming convention for branches.
