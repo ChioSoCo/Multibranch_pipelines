@@ -9,21 +9,11 @@ pipeline {
         sh 'echo "Build step"'
         script {
 
-          //Configure "Jira Steps" section from the Manage Jenkins/Configure System page (plugin: JIRA Pipeline Steps)
-          
-          def testIssue = [fields: [ project: [key: 'WECY'], 
-          summary: "Automatic Ticket  - Build ${currentBuild.displayName} - ${currentBuild.currentResult}",
-          description: "Google Report: ${test_URL1} Youtube Report: ${test_URL2}",
-          customfield_10021: 1, //Field "Sprint", value sprint with id 1
-          components: [[name: 'Tested']],
-          issuetype: [name: 'Task']]]
-          def newIssue = jiraNewIssue issue: testIssue, site: 'SO'
-          echo newIssue.data.key
-          
-          //key: name of the project in Jira
-          //summary: Name of the Ticket
-          //description: Description of the Ticket
-          //site: name of the configured site at the Jira pipeline Steps plugin
+          timeout(time: 1, unit: 'MINUTES') {
+            // Show the select input modal
+            env.INPUT_PARAMS = input message: 'Deploy to region B', ok: 'Deploy'
+         		env.TYPE_TEST = env.INPUT_PARAMS
+          }//timeout
         }
       }
     }
